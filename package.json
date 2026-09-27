@@ -1,0 +1,28 @@
+{
+  "name": "stained-glass-shape-studio",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Offline-first stained-glass pattern studio with frustum unrolls, robust came offsets, 2D artwork mosaics, SVG import, and arbitrary 3D mesh facet templates.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "build:offline": "npm run build && node scripts/make-single-html.mjs && npm run verify:offline",
+    "offline": "node run-offline.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "tsc --noEmit",
+    "verify:offline": "node scripts/verify-offline.mjs",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@types/clipper-lib": "^6.4.0",
+    "clipper-lib": "^6.4.2",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.184.1",
+    "tsx": "4.23.15",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  }
+}
